@@ -1,0 +1,40 @@
+{
+  "name": "atom-one-light-eslider",
+  "displayName": "Atom One Light (eSlider)",
+  "description": "Light syntax and UI theme based on Atom One Light with eSlider accents (from IntelliJ .icls). Optimized for Go.",
+  "version": "1.0.0",
+  "publisher": "eSlider",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "atom",
+    "one light",
+    "eslider",
+    "light",
+    "go",
+    "golang",
+    "material"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eSlider/atom-one-light-eslider.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eSlider/atom-one-light-eslider/issues"
+  },
+  "homepage": "https://github.com/eSlider/atom-one-light-eslider#readme",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Atom One Light (eSlider)",
+        "uiTheme": "vs",
+        "path": "./themes/atom-one-light-eslider-color-theme.json"
+      }
+    ]
+  }
+}
