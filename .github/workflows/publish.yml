@@ -31,8 +31,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Publish to VS Marketplace
-        if: github.event_name == 'release' && secrets.VSCE_PAT != ''
-        run: vsce publish --no-dependencies
+        if: github.event_name == 'release'
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
-        continue-on-error: true
+        run: |
+          if [ -z "${VSCE_PAT}" ]; then
+            echo "VSCE_PAT not configured, skipping Marketplace publish"
+            exit 0
+          fi
+          vsce publish --no-dependencies

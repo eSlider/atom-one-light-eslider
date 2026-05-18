@@ -2,7 +2,7 @@
   "name": "atom-one-light-eslider",
   "displayName": "Atom One Light (eSlider)",
   "description": "Light syntax and UI theme based on Atom One Light with eSlider accents (from IntelliJ .icls). Optimized for Go.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "eSlider",
   "license": "MIT",
   "engines": {
