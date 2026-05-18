@@ -58,6 +58,17 @@ These are **not** part of the theme; add to your user `settings.json` if you wan
 }
 ```
 
+## Publish (maintainers)
+
+1. Create a [Marketplace publisher](https://marketplace.visualstudio.com/manage) named `eSlider` (must match `package.json`).
+2. Create an Azure DevOps [PAT](https://dev.azure.com) with **Marketplace → Manage** scope.
+3. Add repository secret `VSCE_PAT`, then create a GitHub Release — the workflow publishes to the Marketplace and attaches the VSIX.
+
+```bash
+npx @vscode/vsce login eSlider
+npx @vscode/vsce publish --no-dependencies
+```
+
 ## Development
 
 ```bash
