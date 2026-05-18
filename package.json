@@ -1,10 +1,15 @@
 {
   "name": "atom-one-light-eslider",
   "displayName": "Atom One Light (eSlider)",
-  "description": "Light syntax and UI theme based on Atom One Light with eSlider accents (from IntelliJ .icls). Optimized for Go.",
-  "version": "1.0.1",
+  "description": "Soft light theme for VS Code and Cursor: Atom One Light palette with eSlider accents. Go-friendly syntax — purple keywords, blue functions, gold variables, clean #FAFAFA editor.",
+  "version": "1.0.2",
   "publisher": "eSlider",
   "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#FAFAFA",
+    "theme": "light"
+  },
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -18,7 +23,7 @@
     "light",
     "go",
     "golang",
-    "material"
+    "cursor"
   ],
   "repository": {
     "type": "git",

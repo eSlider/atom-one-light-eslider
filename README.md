@@ -1,6 +1,19 @@
 # Atom One Light (eSlider)
 
-Light theme for [Visual Studio Code](https://code.visualstudio.com/) and [Cursor](https://cursor.com/), based on **Atom One Light** with eSlider UI accents. Syntax colors were tuned from the IntelliJ scheme `Atom One Light (Material)` (see `source/`).
+Light theme for [Visual Studio Code](https://code.visualstudio.com/) and [Cursor](https://cursor.com/), based on **Atom One Light** with eSlider UI accents. Tuned from the IntelliJ scheme *Atom One Light (Material)* (`source/`).
+
+## Preview
+
+Go code in Cursor — `pkg/binance/v3/kline.go` with ligatures enabled:
+
+![Atom One Light (eSlider) — Go syntax preview](images/screenshot.png)
+
+- **Keywords** — magenta (`func`, `return`, `for`, `if`)
+- **Types** — purple (`Klines`, `Kline`, `time.Time`)
+- **Functions / methods** — blue (`make`, `append`, `sort.Slice`, `Sorted`, `Filter`)
+- **Variables & fields** — gold (`out`, `c`, `startMs`, `duration`)
+- **Comments** — gray-green italic
+- **Editor** — `#FAFAFA` background, `#5D70E7` accent
 
 ## Install
 
@@ -8,9 +21,7 @@ Light theme for [Visual Studio Code](https://code.visualstudio.com/) and [Cursor
 
 1. Open **Extensions** (`Ctrl+Shift+X` / `Cmd+Shift+X`)
 2. Search for **Atom One Light (eSlider)**
-3. Install and select **Preferences: Color Theme** → **Atom One Light (eSlider)**
-
-Or:
+3. Install → **Preferences: Color Theme** → **Atom One Light (eSlider)**
 
 ```bash
 code --install-extension eSlider.atom-one-light-eslider
@@ -19,11 +30,10 @@ cursor --install-extension eSlider.atom-one-light-eslider
 
 ### VSIX (manual)
 
-Download the latest `.vsix` from [GitHub Releases](https://github.com/eSlider/atom-one-light-eslider/releases), then:
+Download the latest `.vsix` from [GitHub Releases](https://github.com/eSlider/atom-one-light-eslider/releases):
 
 ```bash
-code --install-extension atom-one-light-eslider-1.0.0.vsix
-cursor --install-extension atom-one-light-eslider-1.0.0.vsix
+cursor --install-extension atom-one-light-eslider-1.0.2.vsix
 ```
 
 ## Activate
@@ -32,7 +42,7 @@ cursor --install-extension atom-one-light-eslider-1.0.0.vsix
 "workbench.colorTheme": "Atom One Light (eSlider)"
 ```
 
-## Highlights
+## Palette
 
 | Element | Color |
 |--------|--------|
@@ -45,9 +55,9 @@ cursor --install-extension atom-one-light-eslider-1.0.0.vsix
 | Strings | `#50A14F` |
 | Accent (tabs, focus) | `#5D70E7` |
 
-## Optional editor settings (Go)
+## Optional Go settings
 
-These are **not** part of the theme; add to your user `settings.json` if you want the same behavior:
+Not part of the theme; add to `settings.json` if you want import paths without underlines:
 
 ```json
 "gopls": {
@@ -58,23 +68,13 @@ These are **not** part of the theme; add to your user `settings.json` if you wan
 }
 ```
 
-## Publish (maintainers)
-
-1. Create a [Marketplace publisher](https://marketplace.visualstudio.com/manage) named `eSlider` (must match `package.json`).
-2. Create an Azure DevOps [PAT](https://dev.azure.com) with **Marketplace → Manage** scope.
-3. Add repository secret `VSCE_PAT`, then create a GitHub Release — the workflow publishes to the Marketplace and attaches the VSIX.
-
-```bash
-npx @vscode/vsce login eSlider
-npx @vscode/vsce publish --no-dependencies
-```
-
 ## Development
 
 ```bash
-npm install -g @vscode/vsce
-vsce package
+npx @vscode/vsce package --no-dependencies
 ```
+
+Releases are built by GitHub Actions (VSIX + VS Marketplace).
 
 ## License
 
