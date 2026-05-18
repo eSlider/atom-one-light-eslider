@@ -5,6 +5,9 @@ on:
     types: [published]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -21,14 +24,15 @@ jobs:
       - name: Package VSIX
         run: vsce package --no-dependencies
 
-      - name: Publish to VS Marketplace
+      - name: Upload VSIX to GitHub Release
         if: github.event_name == 'release'
+        run: gh release upload "${{ github.event.release.tag_name }}" ./*.vsix --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Publish to VS Marketplace
+        if: github.event_name == 'release' && secrets.VSCE_PAT != ''
         run: vsce publish --no-dependencies
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
-
-      - name: Upload VSIX to release
-        if: github.event_name == 'release'
-        uses: softprops/action-gh-release@v2
-        with:
-          files: "*.vsix"
+        continue-on-error: true
