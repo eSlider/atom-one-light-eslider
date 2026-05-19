@@ -2,7 +2,7 @@
   "name": "atom-one-light-eslider",
   "displayName": "Atom One Light (eSlider)",
   "description": "Soft light theme for VS Code and Cursor: Atom One Light palette with eSlider accents. Go-friendly syntax — purple keywords, blue functions, gold variables, clean #FAFAFA editor.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "eSlider",
   "license": "MIT",
   "icon": "icon.png",
